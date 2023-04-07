@@ -60,18 +60,18 @@ jobs:
       - uses: FedericoCarboni/setup-ffmpeg@v2
       - run: git pull origin master
       - run: npm install
-      # - run: node instagram.js
+      - run: node instagram.js
 
-  # upload-youtube:
-  #   needs: render-video
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 5
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/download-artifact@v3
-  #     - run: git pull origin master
-  #     - run: npm install
-  #     - run: node youtube.js
+  upload-youtube:
+    needs: render-video
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+      - run: git pull origin master
+      - run: npm install
+      - run: node youtube.js
 
   delete-artifacts:
     runs-on: ubuntu-latest
