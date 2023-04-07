@@ -1,0 +1,25 @@
+{
+    "scripts": {
+        "dev-video": "remotion preview remotion/src/index.tsx --port 3003",
+        "build-video-blur": "remotion render remotion/src/index.tsx Blur video.mp4"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.0",
+        "eslint": "^7.15.0",
+        "ts-node": "^10.8.1",
+        "typescript": "^4.6.2"
+    },
+    "dependencies": {
+        "@remotion/cli": "3.3.31",
+        "@remotion/motion-blur": "3.3.31",
+        "axios": "^1.3.2",
+        "dotenv": "^16.0.3",
+        "ffmpeg-extract-frames": "^2.0.2",
+        "instagram-publisher": "^2.2.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "remotion": "3.3.31",
+        "youtube-videos-uploader": "^2.0.10",
+        "glob": "^8.1.0"
+    }
+}

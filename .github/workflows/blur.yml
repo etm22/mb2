@@ -1,0 +1,83 @@
+name: Create videos
+
+on:
+  # workflow_dispatch:
+  push:
+    branches: master
+  schedule:
+    - cron: "0 */8 * * *" # every 8 hours
+env:
+  tiktoksessionid: ${{secrets.TIKTOKSESSIONID}}
+  # API_URL: ${{secrets.API_URL}}
+  YT_EMAIL: ${{secrets.YT_EMAIL}}
+
+jobs:
+  generate-affirmation-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: node main.js
+      - run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Latest data: ${timestamp}" || exit 0
+          git push
+
+  render-video:
+    needs: generate-affirmation-data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: FedericoCarboni/setup-ffmpeg@v2
+      - run: git pull origin master
+      - run: npm install
+      - run: npm run build-video-blur
+      - uses: actions/upload-artifact@v3
+        with:
+          path: video.mp4
+          retention-days: 1
+
+  upload-tiktok:
+    needs: render-video
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+      - run: git pull origin master
+      - run: npm install
+      - run: pip install requests
+      - run: node tiktok.js
+
+  upload-instagram:
+    needs: render-video
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+      - uses: FedericoCarboni/setup-ffmpeg@v2
+      - run: git pull origin master
+      - run: npm install
+      - run: node instagram.js
+
+  upload-youtube:
+    needs: render-video
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+      - run: git pull origin master
+      - run: npm install
+      - run: node youtube.js
+
+  delete-artifacts:
+    runs-on: ubuntu-latest
+    needs: [upload-instagram, upload-tiktok]
+    steps:
+      - uses: kolpav/purge-artifacts-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          expire-in: 0days # Setting this to 0 will delete all artifacts

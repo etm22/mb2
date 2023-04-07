@@ -1,0 +1,8 @@
+node_modules
+*.mp4
+.env
+public/info.json
+yt_auth
+artifact
+__pycache__
+yt_auth

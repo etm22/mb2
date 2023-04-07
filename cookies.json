@@ -1,0 +1,69 @@
+        [
+            {
+                "key": "csrftoken",
+                "value": "gARuILOT2WnTxWt2RXN1FY82195z4cAF",
+                "expires": "2024-03-12T19:45:13.000Z",
+                "maxAge": 31449600,
+                "domain": "instagram.com",
+                "path": "/",
+                "secure": true,
+                "creation": "2023-03-14T19:45:13.311Z"
+            },
+            {
+                "key": "rur",
+                "value": "\"ASH\\05452954140049\\0541710359113:01f7198184f0b988593c736ef36a55a03d1389c47c6ee98fd2f57c49fe3f7731f7c93965\"",
+                "domain": "instagram.com",
+                "path": "/",
+                "secure": true,
+                "httpOnly": true,
+                "creation": "2023-03-14T19:45:13.312Z",
+                "sameSite": "lax"
+            },
+            {
+                "key": "mid",
+                "value": "ZBDOxgAAAAGZwr3RYPpKSBuM7oo1",
+                "expires": "2025-03-13T19:45:13.000Z",
+                "maxAge": 63072000,
+                "domain": "instagram.com",
+                "path": "/",
+                "secure": true,
+                "creation": "2023-03-14T19:45:13.312Z"
+            },
+            {
+                "key": "ds_user_id",
+                "value": "52954140049",
+                "expires": "2023-06-12T19:45:13.000Z",
+                "maxAge": 7776000,
+                "domain": "instagram.com",
+                "path": "/",
+                "secure": true,
+                "creation": "2023-03-14T19:45:13.312Z"
+            },
+            {
+                "key": "ig_did",
+                "value": "FEBE1E88-FCBF-4507-8930-AEF9A0DDB41D",
+                "expires": "2025-03-13T19:45:13.000Z",
+                "maxAge": 63072000,
+                "domain": "instagram.com",
+                "path": "/",
+                "secure": true,
+                "httpOnly": true,
+                "creation": "2023-03-14T19:45:13.312Z"
+            },
+            {
+                "key": "sessionid",
+                "value": "52954140049%3AyjFf9iYt3Rassf%3A1%3AAYdlVO2RXyzQBBuJkSgivhp65yI5_refHMHSmhNVMw",
+                "expires": "2024-03-13T19:45:13.000Z",
+                "maxAge": 31536000,
+                "domain": "instagram.com",
+                "path": "/",
+                "secure": true,
+                "httpOnly": true,
+                "creation": "2023-03-14T19:45:13.313Z"
+            },
+            {
+                "key": "ig_cb",
+                "value": "1",
+                "creation": "2023-03-14T19:45:13.313Z"
+            }
+        ]
