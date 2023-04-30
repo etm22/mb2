@@ -23,7 +23,7 @@ require("dotenv").config();
   const reel_data = {
     video_path,
     thumbnail_path,
-    caption: `Manifest Love, Success & Money: Link in Bio\n\n${tags}`,
+    caption: `${affirmation.affirmation}\n\nManifest Love, Success & Money: Link in Bio\n\n${tags}`,
     // location: "United States",
   };
   const client = new InstagramPublisher({

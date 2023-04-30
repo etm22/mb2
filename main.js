@@ -2,7 +2,7 @@ const fs = require("fs/promises");
 require("dotenv").config();
 
 (async () => {
-  const path = "public/affirmations.json";
+  const path = "public/affirmation_month.json";
   const affirmations = JSON.parse(await fs.readFile(path));
 
   const randomAffirmation = affirmations.filter((a) => !a.used)[0];
