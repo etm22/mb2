@@ -36,13 +36,14 @@ const email = process.env.YT_EMAIL;
     "Expert Astrology Reading",
     "Attract Love",
     "Attract Your Life Partner",
+    "Guided Sleep Meditation",
   ];
   const tagline = taglines[Math.floor(Math.random() * taglines.length)];
 
   const data = {
     path: "artifact/video.mp4",
-    title: `${affirmation.affirmation} ${yt_tag}`,
-    description: `Tags: (${tags.join(", ")})`,
+    title: `${affirmation.affirmation}`,
+    description: `${tags.join(", ")}`,
     isNotForKid: true,
   };
 
