@@ -30,7 +30,7 @@ jobs:
         with:
           ref: dating
       - uses: FedericoCarboni/setup-ffmpeg@v2
-      - run: git pull origin master
+      - run: git pull origin dating
       - run: npm install
       - run: npm run build-video-blur
       - uses: actions/upload-artifact@v3
