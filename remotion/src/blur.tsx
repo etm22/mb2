@@ -43,13 +43,13 @@ export const ImageComponent: React.FC<{ image_url: string }> = ({
   );
 };
 
-export const Blur = ({ text }) => {
+export const Blur = ({ text, idx }) => {
   const [data, setData] = useState([]);
   const [handle] = useState(() => delayRender());
 
   const fetchData = useCallback(async () => {
     const client_id = "vUwsKy2Hz2Ftpn37uTq1oUdcmG7Lh3TWRwrCHhiMKw0";
-    const query = "money car vacation";
+    const query = "dating relationship";
     const response_1 = await fetch(
       `https://api.unsplash.com/search/photos?query=${query}&client_id=${client_id}&color=black_and_white&orientation=portrait&per_page=30`
     );
@@ -140,7 +140,7 @@ export const Blur = ({ text }) => {
                       textShadow: "rgb(255, 0, 0) 1px 0 30px",
                     }}
                   >
-                    www.psychicspoon.com
+                    Dating Tip # {idx}
                   </h2>
                   <h1
                     style={{
@@ -165,7 +165,7 @@ export const Blur = ({ text }) => {
                     >
                       "YES"
                     </span>{" "}
-                    to Affirm!
+                    if you Agree
                   </h2>
                 </AbsoluteFill>
               </Series.Sequence>

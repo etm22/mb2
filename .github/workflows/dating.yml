@@ -1,0 +1,37 @@
+name: Create videos
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: dating
+
+jobs:
+  generate-dating-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: dating
+      - run: npm install
+      - run: node main.js
+      - run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Latest data: ${timestamp}" || exit 0
+          git push
+
+  render-video:
+    needs: generate-dating-data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: FedericoCarboni/setup-ffmpeg@v2
+      - run: git pull origin master
+      - run: npm install
+      - run: npm run build-video-blur
+      - uses: actions/upload-artifact@v3
+        with:
+          path: video.mp4
+          retention-days: 1

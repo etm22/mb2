@@ -3,7 +3,7 @@ import React from "react";
 import { Blur } from "./blur";
 
 export const RemotionVideo: React.FC = () => {
-  const affirmation = require(`../../public/affirmation.json`);
+  const tip = require(`../../public/dating.json`);
   return (
     <Composition
       id="Blur"
@@ -13,7 +13,8 @@ export const RemotionVideo: React.FC = () => {
       height={1280}
       width={720}
       defaultProps={{
-        text: affirmation.affirmation,
+        text: tip.tip,
+        idx: tip.idx,
       }}
     />
   );

@@ -1,7 +1,8 @@
 {
     "scripts": {
         "dev-video": "remotion preview remotion/src/index.tsx --port 3003",
-        "build-video-blur": "remotion render remotion/src/index.tsx Blur video.mp4"
+        "build-video-blur": "remotion render remotion/src/index.tsx Blur video.mp4",
+        "dating-blur": "node dating.js && npm run build-video-blur"
     },
     "devDependencies": {
         "@types/react": "^17.0.0",
