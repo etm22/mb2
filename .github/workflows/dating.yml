@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: dating
       - uses: FedericoCarboni/setup-ffmpeg@v2
       - run: git pull origin master
       - run: npm install
