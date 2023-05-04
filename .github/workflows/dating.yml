@@ -2,8 +2,8 @@ name: Create videos
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: dating
+  push:
+    branches: dating
 
 jobs:
   generate-dating-data:
