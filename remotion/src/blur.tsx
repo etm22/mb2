@@ -138,9 +138,10 @@ export const Blur = ({ text }) => {
                       fontSize: "3em",
                       color: "red",
                       textShadow: "rgb(255, 0, 0) 1px 0 30px",
+                      lineHeight: "1.5em",
                     }}
                   >
-                    www.psychicspoon.com
+                    More affirmations on: <br /> www.psychicspoon.com
                   </h2>
                   <h1
                     style={{
