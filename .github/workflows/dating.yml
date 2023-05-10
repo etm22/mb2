@@ -1,4 +1,4 @@
-name: Create videos
+name: Create videos dating
 
 on:
   workflow_dispatch:
