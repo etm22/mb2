@@ -1,7 +1,7 @@
 import requests
 import json
 import time
-from util import assertSuccess, printError, getTagsExtra, uploadToTikTok, log
+from util import assertSuccess, printError, getTagsExtra, uploadToTikTok, log, getCreationId
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36'
 
 
@@ -17,7 +17,8 @@ def uploadVideo(session_id, video, title, tags):
     r = session.get(url, headers=headers)
     if not assertSuccess(url, r):
         return False
-    url = "https://us.tiktok.com/api/v1/web/project/create/?type=1&aid=1988"
+    creationid = getCreationId()
+    url = "https://us.tiktok.com/api/v1/web/project/create/?creation_id={}&type=1&aid=1988".format(creationid)
     headers = {
         "X-Secsdk-Csrf-Request": "1",
         "X-Secsdk-Csrf-Version": "1.2.8"
