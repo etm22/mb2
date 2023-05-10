@@ -13,7 +13,7 @@ jobs:
         with:
           ref: dating
       - run: npm install
-      - run: node main.js
+      - run: node dating.js
       - run: |-
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
