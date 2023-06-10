@@ -16,6 +16,25 @@ import { continueRender, delayRender } from "remotion";
 // const text = "You will get a job promotion soon!";
 const image_duration_in_frames = 8;
 
+const titles = [
+  "Attract Love",
+  "Attract Money",
+  "Attract Happiness",
+  "Attract Success",
+  "Attract Health",
+  "Attract Wealth",
+  "Attract Abundance",
+  "Attract Prosperity",
+  "Attract Luck",
+  "Attract Joy",
+  "Attract Peace",
+  "Attract Positivity",
+  "Attract Good Fortune",
+  "Attract Good Luck",
+  "Attract Good Health",
+];
+const random_title = titles[Math.floor(Math.random() * titles.length)];
+
 export const shuffleArray = (array: any[]) => {
   return array.slice().sort(() => Math.random() - 0.5);
 };
@@ -141,7 +160,8 @@ export const Blur = ({ text }) => {
                       lineHeight: "1.5em",
                     }}
                   >
-                    More affirmations on: <br /> www.psychicspoon.com
+                    {random_title}:
+                    <br /> www.psychicspoon.com
                   </h2>
                   <h1
                     style={{
